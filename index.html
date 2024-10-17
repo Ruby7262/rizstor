@@ -1,0 +1,181 @@
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>BIO LINK RIZGANT </title> 
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: transparent; /* Menghapus warna background */
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Shadow putih terang */
+        }
+
+        .logo img {
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+        }
+
+        .container h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link-container a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            width: 250px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .link-container a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Background squares animation */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .square {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            animation: move 15s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-1500px) rotate(720deg);
+            }
+        }
+
+        /* Watermark style */
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <div class="background" id="background"> 
+   <!-- Squares will be generated dynamically by JavaScript --> 
+   <div class="square" style="width: 60.0234px; height: 60.0234px; top: 601.203px; left: 9.5422px; animation-duration: 14.0317s;"></div>
+   <div class="square" style="width: 65.9593px; height: 65.9593px; top: 587.36px; left: 3.66001px; animation-duration: 12.0322s;"></div>
+   <div class="square" style="width: 90.505px; height: 90.505px; top: 640.057px; left: 210.292px; animation-duration: 10.7388s;"></div>
+   <div class="square" style="width: 38.3342px; height: 38.3342px; top: 168.332px; left: 102.093px; animation-duration: 18.2779s;"></div>
+   <div class="square" style="width: 53.9568px; height: 53.9568px; top: 632.984px; left: 235.524px; animation-duration: 9.90182s;"></div>
+   <div class="square" style="width: 94.3194px; height: 94.3194px; top: 451.302px; left: 301.565px; animation-duration: 8.11833s;"></div>
+   <div class="square" style="width: 40.0332px; height: 40.0332px; top: 317.608px; left: 44.3907px; animation-duration: 13.4633s;"></div>
+   <div class="square" style="width: 75.8152px; height: 75.8152px; top: 75.4043px; left: 248.503px; animation-duration: 10.2017s;"></div>
+   <div class="square" style="width: 33.5728px; height: 33.5728px; top: 11.7704px; left: 167.654px; animation-duration: 18.179s;"></div>
+  </div> 
+  <div class="container"> 
+   <div class="logo"> 
+    <img src="lol.jpg" alt="Logo"> 
+   </div> 
+   <h1>RIZGANT STORE</h1> 
+   <div class="link-container"> 
+    <a href="#link1">LINK GRUB</a> 
+    <a href="#link2">LINK IG</a> 
+    <a href="#link3">LINK WA</a> 
+    <a href="#link4">LINK WEB</a> 
+   </div> 
+  </div> 
+  <!-- Watermark at the Bottom --> 
+  <div class="watermark">
+    © 2024 Rizgant Store 
+  </div> 
+  <script>
+        const background = document.getElementById('background');
+
+        function createSquare() {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            
+            const size = Math.random() * 80 + 20;  // Random size between 20px and 100px
+            square.style.width = size + 'px';
+            square.style.height = size + 'px';
+
+            square.style.top = Math.random() * innerHeight + 'px';
+            square.style.left = Math.random() * innerWidth + 'px';
+
+            const duration = Math.random() * 15 + 5;  // Random animation duration between 5s and 20s
+            square.style.animationDuration = duration + 's';
+
+            background.appendChild(square);
+
+            // Remove square after animation completes
+            setTimeout(() => {
+                square.remove();
+            }, duration * 1000); // Duration in milliseconds
+        }
+
+        // Continuously create squares
+        setInterval(createSquare, 150);  // Generate new square every 150ms
+    </script> 
+ </body>
+</html>
